@@ -1,0 +1,11 @@
+services:
+    jupyter-notebook-service:
+        build: .
+        container_name: bmw-container
+        image: jupyter/pyspark-notebook
+        platform: linux/amd64
+        volumes:
+            - "./scripts/sparkdata:/sparkdata"
+            - "./scripts/work:/home/jovyan/work"
+        ports:
+            - "8888:8888"
